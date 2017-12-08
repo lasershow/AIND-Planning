@@ -1,5 +1,3 @@
-## results
-
 ### problem1
 
 | air cargo problems | search functions            | Expansions | Goal Tests | New Nodes | Plan length | Time elapsed in seconds | Optimal solution |
@@ -25,7 +23,7 @@ Although it is a slight difference, the best algorithm for this problem is BFS. 
 | 2                  | A* ignore precond. | 1450       | 1452       | 13303     | 9           | 4.99                    | YES              |
 | 2                  | A* levelsum        | 86         | 88         | 841       | 9           | 185.21                  | YES              |
 
-Unlike problem 1, A * ignore precond. was the earliest and it was the algorithm that found the optimal solution. A * levelsum takes quite a while, but I will pay attention that the search functions, Expansions and Goal Tests are quite small.Also, in this issue Depth Limited has timed out.
+As a result, it was A * ignore preconditions that was most suitable for this problem. A * levelsum takes quite a while, but I will pay attention that the search functions, Expansions and Goal Tests are quite small.Also, in this issue Depth Limited has timed out.
 
 
 ### problem3
@@ -39,7 +37,8 @@ Unlike problem 1, A * ignore precond. was the earliest and it was the algorithm 
 | 3                  | A* ignore precond. | 5040       | 5042       | 44944     | 12          | 19.81                   | YES              |
 | 3                  | A* levelsum        | -          | -          | -         | -           | TIMEOUT                 | -                |
 
-Also this time A * ignore precond. Was able to find the optimum solution quickly. Although DFS is fast, it has not been able to find an optimal solution. In this issue, in addition to Depth Limited, A * levelsum also timed out.
+As a result, it was A * ignore preconditions that was most suitable for this problem.
+Although DFS is fast, it has not been able to find an optimal solution. In this issue, in addition to Depth Limited, A * levelsum also timed out.
 
 ## Comparison of non-heuristic searches
 
