@@ -9,6 +9,15 @@
 | 1                  | A* ignore          precond. | 41         | 43         | 170       | 6           | 0.05                    | YES              |
 | 1                  | A* levelsum                 | 11         | 13         | 50        | 6           | 1.04                    | YES              |
 
+```
+Optimal path:
+Load(C1, P1, SFO)
+Fly(P1, SFO, JFK)
+Unload(C1, P1, JFK)
+Load(C2, P2, JFK)
+Fly(P2, JFK, SFO)
+Unload(C2, P2, SFO)
+```
 
 Although it is a slight difference, the best algorithm for this problem is BFS. Although it is slightly different, A * and A * ignore precond also have good results. Although DFS finishes early, it has not been able to find an optimal solution. A * levelsum has been able to find an optimal solution, but it has a long time.
 
@@ -23,6 +32,19 @@ Although it is a slight difference, the best algorithm for this problem is BFS. 
 | 2                  | A* ignore precond. | 1450       | 1452       | 13303     | 9           | 4.99                    | YES              |
 | 2                  | A* levelsum        | 86         | 88         | 841       | 9           | 185.21                  | YES              |
 
+```
+Optimal path:
+Load(C3, P3, ATL)
+Fly(P3, ATL, SFO)
+Unload(C3, P3, SFO)
+Load(C2, P2, JFK)
+Fly(P2, JFK, SFO)
+Unload(C2, P2, SFO)
+Load(C1, P1, SFO)
+Fly(P1, SFO, JFK)
+Unload(C1, P1, JFK)
+```
+
 As a result, it was A * ignore preconditions that was most suitable for this problem. A * levelsum takes quite a while, but I will pay attention that the search functions, Expansions and Goal Tests are quite small.Also, in this issue Depth Limited has timed out.
 
 
@@ -36,6 +58,22 @@ As a result, it was A * ignore preconditions that was most suitable for this pro
 | 3                  | A*                 | 18234      | 18236      | 149707    | 12          | 62.13                   | YES              |
 | 3                  | A* ignore precond. | 5040       | 5042       | 44944     | 12          | 19.81                   | YES              |
 | 3                  | A* levelsum        | -          | -          | -         | -           | TIMEOUT                 | -                |
+
+```
+Optimal path:
+Load(C2, P2, JFK)
+Fly(P2, JFK, ORD)
+Load(C4, P2, ORD)
+Fly(P2, ORD, SFO)
+Unload(C4, P2, SFO)
+Load(C1, P1, SFO)
+Fly(P1, SFO, ATL)
+Load(C3, P1, ATL)
+Fly(P1, ATL, JFK)
+Unload(C3, P1, JFK)
+Unload(C2, P2, SFO)
+Unload(C1, P1, JFK)
+```
 
 As a result, it was A * ignore preconditions that was most suitable for this problem.
 Although DFS is fast, it has not been able to find an optimal solution. In this issue, in addition to Depth Limited, A * levelsum also timed out.
